@@ -73,7 +73,7 @@ function checkGeneralRequirement() {
 function createClassElement(data) {
 
     let classSection = document.getElementById("classes");
-    const className = data.data.courses[1].course.subject + data.data.courses[1].course.catalogNumber;
+    const className = data.data.courses[0].course.subject + data.data.courses[1].course.catalogNumber;
     let newClass = document.createElement("div");
     let img = document.createElement("img");
     let text = document.createTextNode(className);
