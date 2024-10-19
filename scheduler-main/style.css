@@ -166,3 +166,6 @@ label.fulfilled::before{
     max-height: 400px;
 }
 
+input {
+    width:100%
+}
