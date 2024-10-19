@@ -73,7 +73,7 @@ function checkGeneralRequirement() {
 function createClassElement(data) {
 
     let classSection = document.getElementById("classes");
-    const className = data.data.courses[0].course.subject + data.data.courses[0].course.catalogNumber;
+    const className = data.data.courses[1].course.subject + data.data.courses[1].course.catalogNumber;
     let newClass = document.createElement("div");
     let img = document.createElement("img");
     let text = document.createTextNode(className);
@@ -100,7 +100,7 @@ function createDragAndDropFunctionality() {
     for (oneClass of ohioStateClasses) {
         oneClass.addEventListener("dragstart", function (e) {
             let selectedClass = e.target;
-            let dragAndDropDestination = document.querySelectorAll(".semester, #classes, #left-completed");
+            let dragAndDropDestination = document.querySelectorAll(".spring, .autumn, #classes, #left-completed");
             dragAndDropDestination.forEach(function (item) {
 
                 item.addEventListener("dragover", function (e) {
@@ -126,7 +126,7 @@ function createDragAndDropFunctionality() {
  * and checks if any requirements are met if class is dragged into the schedule.
  */
 function fetchTheClass() {
-    fetch("https://contenttest.osu.edu/v2/classes/search?q=cse")
+    fetch("https://contenttest.osu.edu/v2/classes/search?q=CSE")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Could not fetch resource");

@@ -19,7 +19,7 @@
 }
 .title{
     margin-top: 2.5%;
-margin-bottom: 2.5%;
+    margin-bottom: 2.5%;
 }
 
 .sections{
@@ -69,27 +69,10 @@ margin-bottom: 2.5%;
 
 }
 
-
-#autumn1, #autumn2, #autumn3, #autumn4{
+.spring, .autumn{
     width: 100%;
-    min-height: 50vh;
-    border: 2px solid #fff;
-}
-
-#spring1, #spring2, #spring3, #spring4{
-    width: 100%;
-    min-height: 50vh;
-    border-top: 2px  solid#fff;
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-}
-
-#autumn2, #spring2{
-    border-top: 0;
-    border-bottom: 0;
-}
-#autumn3, #spring3{
-    border-bottom: 0;
+    min-height: fit-content;
+    border: 2px solid #ba0c2f;
 }
 
 #classes{
