@@ -73,20 +73,29 @@ function checkGeneralRequirement() {
 function createClassElement(data) {
 
     let classSection = document.getElementById("classes");
-    const className = data.data.courses[0].course.subject + data.data.courses[1].course.catalogNumber;
-    let newClass = document.createElement("div");
-    let img = document.createElement("img");
-    let text = document.createTextNode(className);
 
-    img.setAttribute("src", "drag_drop_icon.png")
-    img.setAttribute("draggable", false);
+    if (data.data.courses && data.data.courses.length > 0) {
 
-    newClass.classList.add("class");
-    newClass.appendChild(img);
-    newClass.appendChild(text);
-    newClass.setAttribute("draggable", true)
-    classSection.appendChild(newClass);
+        for (var i = 0; i < data.data.courses.length; i++) {
+            const className = data.data.courses[0].course.subject + data.data.courses[i].course.catalogNumber;
+            let newClass = document.createElement("div");
+            let img = document.createElement("img");
+            let text = document.createTextNode(className);
+        
+            img.setAttribute("src", "drag_drop_icon.png")
+            img.setAttribute("draggable", false);
+        
+            newClass.classList.add("class");
+            newClass.appendChild(img);
+            newClass.appendChild(text);
+            newClass.setAttribute("draggable", true)
+            classSection.appendChild(newClass);
+        
+        }
 
+    }
+
+   
 }
 
 /**
