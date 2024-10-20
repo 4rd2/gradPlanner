@@ -113,6 +113,7 @@ function createDragAndDropFunctionality() {
         oneClass.addEventListener("dragstart", function (e) {
             let selectedClass = e.target;
             let dragAndDropDestination = document.querySelectorAll(".spring, .autumn, #classes, #left-completed");
+
             dragAndDropDestination.forEach(function (item) {
 
                 item.addEventListener("dragover", function (e) {
@@ -122,6 +123,9 @@ function createDragAndDropFunctionality() {
                 item.addEventListener("drop", function (e) {
                     if (selectedClass != null) {
                         item.appendChild(selectedClass);
+                        
+                        saveClassPosition(selectedClass.id, item.id);
+
                         checkClassRequirement();
                         checkGeneralRequirement();
                     }
@@ -131,7 +135,26 @@ function createDragAndDropFunctionality() {
         });
     }
 }
-
+function saveClassPosition(classId, containerId) {
+    let savedPositions = JSON.parse(localStorage.getItem('classPositions')) || {};
+    savedPositions[classId] = containerId;
+    localStorage.setItem('classPositions', JSON.stringify(savedPositions));
+}
+function loadClassPositions() {
+    let savedPositions = JSON.parse(localStorage.getItem('classPositions')) || {};
+    for (let classId in savedPositions) {
+        let containerId = savedPositions[classId];
+        let classElement = document.getElementById(classId);
+        let containerElement = document.getElementById(containerId);
+        if (classElement && containerElement) {
+            containerElement.appendChild(classElement);
+        }
+    }
+}
+window.onload = function () {
+    loadClassPositions();
+    createDragAndDropFunctionality(); // Ensures drag-and-drop is still set up
+};
 /**
  * Fetches a class from the OSU course catalog given the name, 
  * creates a designed element for that class, adds drag and drop functionality,

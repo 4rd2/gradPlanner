@@ -43,6 +43,7 @@
     width: 100%;
     color: black;
     border: 2px solid #ba0c2f;
+    border-radius: 10px;
 }
 #left-requirements{
     margin-bottom: 5%;
@@ -50,6 +51,11 @@
     min-height: fit-content;
 }
 
+/*Autumn and Spring Boxes*/
+.yearTitle {
+    border: 2px solid #ba0c2f;
+    margin-bottom: 1 vh;
+}
 
 #schedule{
     width: 75%;
@@ -58,15 +64,18 @@
     justify-content:baseline;
     align-items: stretch;
     min-height: fit-content;
+    
 }
 .semesters{
     width: 100%;
+    margin-bottom: 5vh;
     display: flex;
     color: black;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: stretch;
     height: fit-content;
+    
 }
 
 .spring, .autumn{
@@ -75,30 +84,8 @@
     border: 2px solid #ba0c2f;
 }
 
-#classes{
-    width: 25%;
-    min-height: 100vh;
-    margin: 20px;
-    border: 2px solid #ba0c2f;
-    color: black;
-}
 
-.class{
-    background: #e91e63;
-    height: 60px;
-    margin: 30px;
-    color: black;
-    display: flex;
-    align-items: center;
-    cursor: grab;
-}
-
-.class img{
-    width: 5%;
-    margin-right: 10%;
-    margin-left: 15%;
-}
-
+/*Left requirements*/
 ul li{
     list-style: none;
     font-size: 80%;
@@ -166,6 +153,29 @@ label.fulfilled::before{
     max-height: 400px;
 }
 
-input {
-    width:100%
+/*Right side (Classes section)*/
+#classes{
+    width: 25%;
+    min-height: fit-content;
+    margin: 20px;
+    border: 2px solid #ba0c2f;
+    border-radius: 10px;
+    color: black;
+}
+
+.class{
+    background: #e91e63;
+    height: 60px;
+    margin: 30px;
+    color: black;
+    display: flex;
+    align-items: center;
+    cursor: grab;
+    border-radius: 10px;
+}
+
+.class img{
+    width: 5%;
+    margin-right: 10%;
+    margin-left: 15%;
 }
